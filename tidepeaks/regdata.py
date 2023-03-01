@@ -5,32 +5,32 @@ from scipy import interpolate
 
 def regdata(time_raw: list[datetime], wl_raw: list[float], interval: float):
     """
-    Interpolates tide gauge time series to specified regular intervals 
+    Interpolates tide gauge time series to specified regular intervals.
 
     NOTES:
-    - Duplicates are removed
-    - Gaps in the data greater than 3 hours are filled with NaNs
-    - The interpolated time series begins at the start of the first hour
-    - For further information refer to the Tide Peaks Toolbox User Manual
+    - Duplicates are removed.
+    - Gaps in the data greater than 3 hours are filled with NaNs.
+    - The interpolated time series begins at the start of the first hour.
+    - For further information refer to the Tide Peaks Toolbox User Manual.
 
     BEFORE RUNNING THIS FUNCTION:
-    1. Create a new 'time_raw' variable datetime
-    2. Create a new 'wl_raw' variable in metres with the required vertical reference
-    3. Replace any error flag values in "wl_raw" with NaNs
-    4. Divide the time series into annual lots January to December
-        - Where available, include 6-12 hours before 1-Jan and after 31-Dec (ensures peaks occurring near New Years Eve are counted)
+    1. Create a new 'time_raw' variable datetime.
+    2. Create a new 'wl_raw' variable in metres with the required vertical reference.
+    3. Replace any error flag values in "wl_raw" with NaNs.
+    4. Divide the time series into annual lots January to December.
+        - Where available, include 6-12 hours before 1-Jan and after 31-Dec (ensures peaks occurring near New Years Eve are counted).
 
     Author: Karen Palmer, University of Tasmania
     Author: Ben Mildren, University of Tasmania
     Created: 22/02/2023
 
     Args:
-        time_raw (list[datetime]): Input time vector in datetime format
-        wl_raw (list[float]): Input water levels in metres
-        interval (float): Specified output frequency in fraction of hours
+        time_raw (list[datetime]): Input time vector in datetime format.
+        wl_raw (list[float]): Input water levels in metres.
+        interval (float): Specified output frequency in fraction of hours.
 
     Returns:
-        time, wl: Regular interval time vector in datetime format and interpolated water levels in metres
+        time, wl: Regular interval time vector in datetime format and interpolated water levels in metres.
     """
     # Remove duplicates
     index = np.where(np.diff(time_raw) == 0)

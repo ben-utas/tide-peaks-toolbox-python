@@ -3,21 +3,22 @@ from utide import solve
 
 
 def coefdatums(coef: solve.Bunch):
-    """ Takes the 'coef' structure output from UTide harmonic analysis and computes constituent-based tidal datums from standard formulae.
+    """
+    Takes the 'coef' structure output from UTide harmonic analysis and computes constituent-based tidal datums from standard formulae.
+
+    NOTES:
+    - Equations from ICSM Australian Tides Manual SP9 v.5.0, 2018 and Woodworth & Pugh, 2014. 'Sea Level Science'. Cambridge Press.
+    - Expected constituents are computed from one calendar year Jan-Dec.
+    - Additional datums can be computed from user specified equations.
+    - Also computes the mean tide level and tidal form factor.
+    - For further information refer to the Tide Peaks Toolbox User Manual.
 
     Author: Karen Palmer, University of Tasmania
     Author: Ben Mildren, University of Tasmania
     Created: 01/03/2023
 
-    NOTES:
-    - Equations from ICSM Australian Tides Manual SP9 v.5.0, 2018 and Woodworth & Pugh, 2014. 'Sea Level Science'. Cambridge Press.
-    - Expected constituents are computed from one calendar year Jan-Dec *
-    - Additional datums can be computed from user specified equations
-    - Also computes the Mean Tide Level (MTL) and Tidal Form Factor (F)
-    - For further information refer to the Tide Peaks Toolbox User Manual
-
     Args:
-        coef (solve.Bunch): Tidal harmonic coefficient results structure from utide
+        coef (solve.Bunch): Tidal harmonic coefficient results structure from utide.
 
     Returns:
         hhwss, mhws, mhw, mlw, mlws, msl, mtl, mhhw, mllw, F: high high water solstices springs, mean high water springs, mean higher high water, mean high water, mean sea level, mean tide level, mean low water, mean lower low water, mean low water springs, and form factor.
