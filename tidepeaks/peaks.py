@@ -29,7 +29,7 @@ def peaks(
         wl (list[float]): Observed water levels in metres.
 
     Returns:
-        basic_hw, basic_lw, pred_hw, pred_lw, obs_hw, obs_lw: dicts with 'time' and 'hw'/'lw' keys returning arrays of basic, predicted, and observed heights, respectively.
+        basic_hw, basic_lw, pred_hw, pred_lw, obs_hw, obs_lw (dicts): 'time' and 'hw'/'lw' keys returning arrays of basic, predicted, and observed heights, respectively.
     """
     # Locate tidal maximas in basic tide model
     hw_index = find_peaks(wl_basic, distance=4/24, prominence=0.1)

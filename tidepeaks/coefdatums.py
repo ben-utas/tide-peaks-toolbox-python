@@ -21,7 +21,7 @@ def coefdatums(coef: solve.Bunch):
         coef (solve.Bunch): Tidal harmonic coefficient results structure from utide.
 
     Returns:
-        hhwss, mhws, mhw, mlw, mlws, msl, mtl, mhhw, mllw, F: high high water solstices springs, mean high water springs, mean higher high water, mean high water, mean sea level, mean tide level, mean low water, mean lower low water, mean low water springs, and form factor.
+        hhwss, mhws, mhw, mlw, mlws, msl, mtl, mhhw, mllw, F (floats): high high water solstices springs, mean high water springs, mean higher high water, mean high water, mean sea level, mean tide level, mean low water, mean lower low water, mean low water springs, and form factor.
     """
 
     # Define variables retrieved through coef
